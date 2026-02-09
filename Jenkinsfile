@@ -30,7 +30,6 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: 'target/*.war,Dockerfile',
-                                    removePrefix: 'target',
                                     remoteDirectory: 'docker-app',
                                     execCommand: '''
                                         cd docker-app
@@ -45,6 +44,6 @@ pipeline {
                     ]
                 )
             }
-        }
+}
     }
 }
